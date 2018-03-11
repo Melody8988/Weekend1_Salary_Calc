@@ -1,4 +1,4 @@
-let monthlyTotal = 0
+
 let employees = [];
 
 class Employee{
@@ -32,23 +32,30 @@ function updateTable(){
 
 function updateExpenses(){
   console.log('in update Expenses');
-
+  let monthlyTotal = 0
   let outputElement = $('.tableContent');
   outputElement.empty();
+
   for( employee of employees ){ //loop through and display expenses on DOM
   console.log( employee );
   //output on Table
   $('.tableContent').append ('<tr><td>' + employee.first + '</td><td>' + employee.last + '</td><td>' + Number(employee.id) + '</td><td>' + employee.title + '</td><td>$' + Number(employee.salary) + '</td></tr>');
+  monthlyTotal += Number(employee.salary)/12;
+  console.log('monthlyTotal', monthlyTotal);
+  $('#monthlyContent').empty();
+  $('#monthlyContent').append('<h2>'+ 'Total Monthly: $' + monthlyTotal + '</h2>');
+
+  //clear inputs
   $('#firstName').val('');
   $('#lastName').val('');
   $('#idNumber').val('');
   $('#titleIn').val('');
   $('#annualSalary').val('');
-  finalCalculation();
-  }
-}
-function finalCalculation(){
 
-  monthlyTotal += Number(employee.salary)/12
-  console.log('monthlyTotal', monthlyTotal);
+  }
+
+  if ( monthlyTotal > 20000){
+    console.log( 'red');
+  }
+
 }
