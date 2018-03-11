@@ -13,10 +13,10 @@ class Employee{
 
 $(document).ready(readyNow);
   function readyNow(){
-    addEmployee();
+    clickSubmit();
 }
 
-function addEmployee(){
+function clickSubmit(){
   //on click
   $('#submitBtn').on('click', updateTable);
 }
@@ -26,24 +26,27 @@ function updateTable(){
   //create new Employee
   let newEmployee = new Employee ( $('#firstName').val(), $('#lastName').val(), $('#idNumber').val(), $('#titleIn').val(), $('#annualSalary').val() );
   employees.push( new Employee );
-
   updateExpenses();
 }
 
 function updateExpenses(){
-  console.log('in update Expenses');
   let outputElement = $('.tableContent');
   outputElement.empty();
-  for( employee of employees ){
+  for( employee of employees ){ //loop through and display expenses on DOM
   console.log( employee );
+  //output on Table
   $('.tableContent').append ('<tr><td>' + employee.first + '</td><td>' + employee.last + '</td><td>' + Number(employee.id) + '</td><td>' + employee.title + '</td><td>$' + Number(employee.salary) + '</td></tr>');
+  //clear input fields
   $('#firstName').val('');
   $('#lastName').val('');
   $('#idNumber').val('');
   $('#titleIn').val('');
   $('#annualSalary').val('');
-
-  //loop through and display expenses on DOM
-  //output on Table
+  finalCalculation();
   }
+}
+function finalCalculation(){
+
+  monthlyTotal += Number(employee.salary)/12
+  console.log('monthlyTotal', monthlyTotal);
 }

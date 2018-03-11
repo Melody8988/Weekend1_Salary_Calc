@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html>
+
   <head>
     <meta charset="utf-8">
     <title>Salary Calculator</title>
@@ -7,47 +8,31 @@
     <script src="client.js" charset="utf-8"></script>
     <link rel="stylesheet" href="style.css">
   </head>
+
   <body>
     <div class="header">
-
       <h1>Salary Calculator</h1>
     </div>
-      <h3>Add Employee:</h3>
+    <h3>Add Employee:</h3>
 
-    <div class="inputs">
-
-
-      <input id="firstName" type="text" placeholder="First Name" ></input>
-      <input id="lastName" type="text" placeholder="Last Name" ></input>
-      <input id="idNumber" type="number" placeholder="ID " ></input>
-      <input id="titleIn" type="text" placeholder="Title" ></input>
-      <input id="annualSalary" type="number" placeholder="Salary" ></input>
-      <button id="submitBtn" >Submit</button>
-
-
-    </div>
-
+    <input id="firstName" type="text" placeholder="First Name" ></input>
+    <input id="lastName" type="text" placeholder="Last Name" ></input>
+    <input id="idNumber" type="number" placeholder="ID " ></input>
+    <input id="titleIn" type="text" placeholder="Title" ></input>
+    <input id="annualSalary" type="number" placeholder="Salary" ></input>
+    <button id="submitBtn" >Submit</button>
 
     <h2>Employees</h2>
 
-    <div class="wireframe">
+    <table id="table">
+      <thead>
+        <tr><th>First Name</th><th>Last Name</th><th>ID</th><th>Title</th><th>Annual Salary</th></tr>
+          </thead>
+            <tbody class="tableContent">
+              <tr><td>Person</td><td>Name</td><td>1234</td><td>Example</td><td>$80,000</td></tr>
+            </tbody>
+    </table>
 
-      <table id="table">
-        <thead>
-          <tr><th>First Name</th><th>Last Name</th><th>ID</th><th>Title</th><th>Annual Salary</th></tr>
-        </thead>
-        <!-- Table Body -->
-        <tbody class="tableContent">
-          <!-- tr: table row, td: table data (a.k.a. column) -->
-      <tr><td>Jen</td><td>Barber</td><td>4521</td><td>Team Lead</td><td>80,000</td></tr>
-        <tr><td>Maurice</td><td>Moss</td><td>8724</td><td>Support Team</td><td>58,000</td></tr>
-        </tbody>
-        </table>
-
-            </div>
-            <h2>Total Monthly</h2>
-
-    </div>
-
+    <h2>Total Monthly</h2>
   </body>
 </html>
