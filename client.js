@@ -26,7 +26,6 @@ function updateTable(){
   //create new Employee
   let newEmployee = new Employee ( $('#firstName').val(), $('#lastName').val(), $('#idNumber').val(), $('#titleIn').val(), $('#annualSalary').val() );
   employees.push( new Employee );
-
   updateExpenses();
 }
 
@@ -35,9 +34,9 @@ function updateExpenses(){
   let monthlyTotal = 0
   let outputElement = $('.tableContent');
   outputElement.empty();
-
   for( employee of employees ){ //loop through and display expenses on DOM
   console.log( employee );
+  
   //output on Table
   $('.tableContent').append ('<tr><td>' + employee.first + '</td><td>' + employee.last + '</td><td>' + Number(employee.id) + '</td><td>' + employee.title + '</td><td>$' + Number(employee.salary) + '</td></tr>');
   monthlyTotal += Number(employee.salary)/12

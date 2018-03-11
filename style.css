@@ -3,18 +3,18 @@ table, th, td{
 
 }
 
-table {
-    border-collapse: collapse;
-    width: 50%;
-    margin-left: 30px;
-}
-
 th, td {
     height: 50px;
     padding-left: 15px;
     padding-right: 15px;
     text-align: left;
     width: 300px;
+}
+
+table {
+    border-collapse: collapse;
+    width: 50%;
+    margin-left: 30px;
 }
 
 .header{
