@@ -40,10 +40,10 @@ function updateExpenses(){
   console.log( employee );
   //output on Table
   $('.tableContent').append ('<tr><td>' + employee.first + '</td><td>' + employee.last + '</td><td>' + Number(employee.id) + '</td><td>' + employee.title + '</td><td>$' + Number(employee.salary) + '</td></tr>');
-  monthlyTotal += Number(employee.salary)/12;
+  monthlyTotal += Number(employee.salary)/12
   console.log('monthlyTotal', monthlyTotal);
   $('#monthlyContent').empty();
-  $('#monthlyContent').append('<h2>'+ 'Total Monthly: $' + monthlyTotal + '</h2>');
+  $('#monthlyContent').append('<h2>'+ 'Total Monthly: $' + monthlyTotal.toFixed(2) + '</h2>');
 
   //clear inputs
   $('#firstName').val('');
@@ -56,6 +56,7 @@ function updateExpenses(){
 
   if ( monthlyTotal > 20000){
     console.log( 'red');
+    $('#monthlyContent').css('background-color', '#900C3F');
+    $('#monthlyContent').css('color', 'white')
   }
-
 }
