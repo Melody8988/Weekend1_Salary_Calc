@@ -19,6 +19,7 @@ $(document).ready(readyNow);
 function addEmployee(){
   //on click
   $('#submitBtn').on('click', updateTable);
+  $('#removeBtn').on('click', removeEmployee);
 }
 
 function updateTable(){
@@ -36,9 +37,9 @@ function updateExpenses(){
   outputElement.empty();
   for( employee of employees ){ //loop through and display expenses on DOM
   console.log( employee );
-  
+
   //output on Table
-  $('.tableContent').append ('<tr><td>' + employee.first + '</td><td>' + employee.last + '</td><td>' + Number(employee.id) + '</td><td>' + employee.title + '</td><td>$' + Number(employee.salary) + '</td></tr>');
+  $('.tableContent').append ('<tr><td>' + employee.first + '</td><td>' + employee.last + '</td><td>' + Number(employee.id) + '</td><td>' + employee.title + '</td><td>$' + Number(employee.salary) + '</td><td>' + '<button>Remove</button>' + '</td></tr>');
   monthlyTotal += Number(employee.salary)/12
   console.log('monthlyTotal', monthlyTotal);
   $('#monthlyContent').empty();
@@ -56,6 +57,12 @@ function updateExpenses(){
   if ( monthlyTotal > 20000){
     console.log( 'red');
     $('#monthlyContent').css('background-color', '#900C3F');
-    $('#monthlyContent').css('color', 'white')
+    $('#monthlyContent').css('color', 'white');
+
   }
+}
+
+function removeEmployee(){
+  console.log('test');
+  $('#tableContent').closest ('<tr></tr>').remove();
 }
